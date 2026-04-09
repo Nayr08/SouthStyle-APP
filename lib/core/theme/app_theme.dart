@@ -6,7 +6,7 @@ import 'app_colors.dart';
 class ThemeProvider extends ChangeNotifier {
   static const String _themeKey = 'is_dark_mode';
 
-  bool _isDarkMode = false;
+  bool _isDarkMode = true; // Default to dark mode
   bool get isDarkMode => _isDarkMode;
 
   ThemeProvider() {
@@ -15,7 +15,7 @@ class ThemeProvider extends ChangeNotifier {
 
   Future<void> _loadTheme() async {
     final prefs = await SharedPreferences.getInstance();
-    _isDarkMode = prefs.getBool(_themeKey) ?? false;
+    _isDarkMode = prefs.getBool(_themeKey) ?? true; // Default to true (dark mode)
     notifyListeners();
   }
 
@@ -24,6 +24,10 @@ class ThemeProvider extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_themeKey, _isDarkMode);
     notifyListeners();
+  }
+
+  String getLogoPath() {
+    return _isDarkMode ? 'assets/images/logo_darkmode.png' : 'assets/images/logo_lightmode.png';
   }
 }
 

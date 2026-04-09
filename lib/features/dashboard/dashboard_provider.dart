@@ -103,14 +103,30 @@ class DashboardProvider extends ChangeNotifier {
   Future<void> _fetchLiveOrders() async {
     final ordersData = await _client
         .from('job_orders')
-        .select()
+        .select('''
+          id,
+          display_order_id,
+          customer_name,
+          product_type,
+          quantity,
+          notes,
+          status,
+          created_at,
+          created_by,
+          employees(full_name)
+        ''')
         .inFilter('status', ['pending', 'cutting', 'printing'])
         .order('created_at', ascending: false)
         .limit(20);
 
-    final orders = (ordersData as List)
-        .map((json) => JobOrder.fromJson(json as Map<String, dynamic>))
-        .toList();
+    final orders = (ordersData as List).map((json) {
+      final employee = json['employees'] as Map<String, dynamic>?;
+      final createdByName = employee?['full_name'] as String? ?? 'Unknown User';
+      return JobOrder.fromJson({
+        ...json as Map<String, dynamic>,
+        'created_by': createdByName,
+      });
+    }).toList();
 
     if (orders.isEmpty) {
       liveOrders = [];

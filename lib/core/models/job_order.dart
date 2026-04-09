@@ -4,6 +4,7 @@ enum OrderStatus { pending, cutting, printing, done }
 
 class JobOrder {
   final String id;
+  final int displayOrderId;
   final String customerName;
   final ProductType productType;
   final int quantity;
@@ -14,6 +15,7 @@ class JobOrder {
 
   const JobOrder({
     required this.id,
+    required this.displayOrderId,
     required this.customerName,
     required this.productType,
     required this.quantity,
@@ -23,9 +25,16 @@ class JobOrder {
     required this.createdAt,
   });
 
+  /// Formats the display order ID as "ORDER-001", "ORDER-002", etc.
+  /// Falls back to UUID prefix if display_order_id is not set.
+  String get formattedOrderId => displayOrderId > 0 
+    ? 'ORDER-${displayOrderId.toString().padLeft(3, '0')}' 
+    : 'ORDER-${id.substring(0, 8).toUpperCase()}';
+
   factory JobOrder.fromJson(Map<String, dynamic> json) {
     return JobOrder(
       id: json['id'] as String,
+      displayOrderId: (json['display_order_id'] as int?) ?? 0,
       customerName: json['customer_name'] as String,
       productType: _parseProductType(json['product_type'] as String),
       quantity: json['quantity'] as int,

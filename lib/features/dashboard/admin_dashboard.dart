@@ -235,7 +235,7 @@ class _StatsGrid extends StatelessWidget {
         builder: (context, constraints) {
           final spacing = 12.0;
           final cardWidth = (constraints.maxWidth - spacing) / 2;
-          final cardHeight = cardWidth * 0.72;
+          final cardHeight = cardWidth * 0.95;
 
           return Wrap(
             spacing: spacing,

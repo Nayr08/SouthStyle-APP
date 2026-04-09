@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_theme.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/services/auth_service.dart';
 import '../../shared/widgets/custom_button.dart';
@@ -60,12 +61,31 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Icon(
-                    Icons.diamond_outlined,
-                    size: 64,
-                    color: AppColors.gold,
+                  Consumer<ThemeProvider>(
+                    builder: (context, themeProvider, _) {
+                      return Center(
+                        child: Container(
+                          width: 130,
+                          height: 130,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: AppColors.gold,
+                              width: 4,
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(6),
+                          child: ClipOval(
+                            child: Image.asset(
+                              themeProvider.getLogoPath(),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   Text(
                     AppConstants.appName,
                     textAlign: TextAlign.center,

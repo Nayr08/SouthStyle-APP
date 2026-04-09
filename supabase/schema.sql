@@ -75,14 +75,15 @@ COMMENT ON TABLE attendance IS 'Populated by ZKTeco biometric middleware';
 
 -- job_orders ----------------------------------------------
 CREATE TABLE job_orders (
-  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  customer_name TEXT NOT NULL,
-  product_type  product_type NOT NULL,
-  quantity      INTEGER NOT NULL CHECK (quantity > 0),
-  notes         TEXT,
-  status        order_status NOT NULL DEFAULT 'pending',
-  created_by    UUID NOT NULL REFERENCES employees(id) ON DELETE RESTRICT,
-  created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+  id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  display_order_id BIGSERIAL UNIQUE NOT NULL,
+  customer_name    TEXT NOT NULL,
+  product_type     product_type NOT NULL,
+  quantity         INTEGER NOT NULL CHECK (quantity > 0),
+  notes            TEXT,
+  status           order_status NOT NULL DEFAULT 'pending',
+  created_by       UUID NOT NULL REFERENCES employees(id) ON DELETE RESTRICT,
+  created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
 -- order_items ---------------------------------------------

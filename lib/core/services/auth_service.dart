@@ -20,19 +20,29 @@ class AuthResult {
 class AuthService {
   final SupabaseClient _client = Supabase.instance.client;
 
-  /// Signs in using employee_id as the email (employee_id@southstyle.app)
-  /// and fetches the role + UUID from the "employees" table.
+  /// Signs in by looking up the employee's email via RPC (bypasses RLS),
+  /// authenticating with Supabase Auth, then fetching full employee data.
   Future<AuthResult> signIn({
     required String employeeId,
     required String password,
   }) async {
-    final email = '$employeeId@southstyle.app';
+    // 1. Look up email via RPC (works pre-auth, bypasses RLS)
+    final email = await _client.rpc(
+      'get_employee_email',
+      params: {'emp_id': employeeId},
+    ) as String?;
 
+    if (email == null) {
+      throw Exception('Employee not found');
+    }
+
+    // 2. Sign in with Supabase Auth
     await _client.auth.signInWithPassword(
       email: email,
       password: password,
     );
 
+    // 3. Fetch full employee data (now authenticated, RLS passes)
     final userId = _client.auth.currentUser!.id;
 
     final data = await _client
@@ -162,6 +172,9 @@ class AuthProvider extends ChangeNotifier {
 
   String _friendlyError(Object e) {
     final msg = e.toString().toLowerCase();
+    if (msg.contains('employee not found')) {
+      return 'Employee ID not found.';
+    }
     if (msg.contains('invalid login') || msg.contains('invalid_credentials')) {
       return 'Invalid employee ID or password.';
     }
