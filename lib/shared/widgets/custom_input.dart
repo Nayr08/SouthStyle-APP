@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomInput extends StatelessWidget {
   final String label;
@@ -34,7 +33,7 @@ class CustomInput extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.dmSans(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w500,
             color: Theme.of(context).colorScheme.onSurface,
@@ -48,7 +47,7 @@ class CustomInput extends StatelessWidget {
           validator: validator,
           onChanged: onChanged,
           maxLines: maxLines,
-          style: GoogleFonts.dmSans(
+          style: TextStyle(
             fontSize: 14,
             color: Theme.of(context).colorScheme.onSurface,
           ),

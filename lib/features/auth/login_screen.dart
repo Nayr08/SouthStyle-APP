@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
@@ -89,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     AppConstants.appName,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.syne(
+                    style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
                       color: AppColors.gold,
@@ -99,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     'Sign in to continue',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 14,
                       color: Theme.of(context)
                           .colorScheme
@@ -123,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Text(
                             auth.error!,
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 13,
                               color: AppColors.error,
                             ),
@@ -187,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     'Role is auto-detected from your account.',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       color: Theme.of(context)
                           .colorScheme

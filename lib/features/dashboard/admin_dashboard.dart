@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -30,7 +29,7 @@ class _ReportsPlaceholder extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             'Reports coming soon',
-            style: GoogleFonts.dmSans(
+            style: TextStyle(
               fontSize: 16,
               color: Theme.of(context)
                   .colorScheme
@@ -97,7 +96,7 @@ class _DashboardHome extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'Live Orders',
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -142,7 +141,7 @@ class _GreetingHeader extends StatelessWidget {
               children: [
                 Text(
                   '$_greeting, $displayName',
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -151,7 +150,7 @@ class _GreetingHeader extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   dateStr,
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 14,
                     color: Theme.of(context)
                         .colorScheme
@@ -170,7 +169,7 @@ class _GreetingHeader extends StatelessWidget {
               backgroundColor: AppColors.gold.withValues(alpha: 0.15),
               child: Text(
                 displayName.isNotEmpty ? displayName[0].toUpperCase() : 'U',
-                style: GoogleFonts.syne(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                   color: AppColors.gold,
@@ -323,7 +322,7 @@ class _StatTile extends StatelessWidget {
                 children: [
                   Text(
                     value,
-                    style: GoogleFonts.syne(
+                    style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.onSurface,
@@ -331,7 +330,7 @@ class _StatTile extends StatelessWidget {
                   ),
                   Text(
                     label,
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       color: Theme.of(context)
                           .colorScheme
@@ -376,7 +375,7 @@ class _LiveOrdersList extends StatelessWidget {
           child: Center(
             child: Text(
               'No active orders right now.',
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 14,
                 color: Theme.of(context)
                     .colorScheme
@@ -440,7 +439,7 @@ class _LiveOrderCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     order.customerName,
-                    style: GoogleFonts.syne(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).colorScheme.onSurface,
@@ -458,7 +457,7 @@ class _LiveOrderCard extends StatelessWidget {
                   ),
                   child: Text(
                     order.status.label,
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: color,
@@ -472,7 +471,7 @@ class _LiveOrderCard extends StatelessWidget {
             // Row 2: product type tag
             Text(
               order.productType.label,
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 13,
                 color: Theme.of(context)
                     .colorScheme
@@ -500,7 +499,7 @@ class _LiveOrderCard extends StatelessWidget {
               children: [
                 Text(
                   doneText,
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context)
                         .colorScheme
@@ -510,7 +509,7 @@ class _LiveOrderCard extends StatelessWidget {
                 ),
                 Text(
                   pctText,
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: color,

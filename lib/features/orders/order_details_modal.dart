@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../../core/models/job_order.dart';
 import '../../core/theme/app_colors.dart';
@@ -37,7 +36,7 @@ class OrderDetailsModal extends StatelessWidget {
                 children: [
                   Text(
                     'Order Details',
-                    style: GoogleFonts.syne(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.onSurface,
@@ -85,7 +84,7 @@ class OrderDetailsModal extends StatelessWidget {
                     const SizedBox(height: 16),
                     Text(
                       'Notes',
-                      style: GoogleFonts.syne(
+                      style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.onSurface,
@@ -103,7 +102,7 @@ class OrderDetailsModal extends StatelessWidget {
                       ),
                       child: Text(
                         order.notes!,
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 13,
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
@@ -126,7 +125,7 @@ class OrderDetailsModal extends StatelessWidget {
           flex: 1,
           child: Text(
             label,
-            style: GoogleFonts.dmSans(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w500,
               color: Theme.of(context)
@@ -140,7 +139,7 @@ class OrderDetailsModal extends StatelessWidget {
           flex: 1,
           child: Text(
             value,
-            style: GoogleFonts.dmSans(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
@@ -161,7 +160,7 @@ class OrderDetailsModal extends StatelessWidget {
           flex: 1,
           child: Text(
             'Status',
-            style: GoogleFonts.dmSans(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w500,
               color: Theme.of(context)
@@ -181,7 +180,7 @@ class OrderDetailsModal extends StatelessWidget {
             ),
             child: Text(
               statusLabel,
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: statusColor,

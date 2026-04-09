@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app_colors.dart';
 
@@ -36,77 +35,77 @@ class AppTheme {
 
   static TextTheme _buildTextTheme(TextTheme base, Color textColor) {
     return base.copyWith(
-      displayLarge: GoogleFonts.syne(
+      displayLarge: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w700,
         color: textColor,
       ),
-      displayMedium: GoogleFonts.syne(
+      displayMedium: TextStyle(
         fontSize: 28,
         fontWeight: FontWeight.w700,
         color: textColor,
       ),
-      displaySmall: GoogleFonts.syne(
+      displaySmall: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      headlineLarge: GoogleFonts.syne(
+      headlineLarge: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      headlineMedium: GoogleFonts.syne(
+      headlineMedium: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      headlineSmall: GoogleFonts.syne(
+      headlineSmall: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      titleLarge: GoogleFonts.syne(
+      titleLarge: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      titleMedium: GoogleFonts.dmSans(
+      titleMedium: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: textColor,
       ),
-      titleSmall: GoogleFonts.dmSans(
+      titleSmall: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: textColor,
       ),
-      bodyLarge: GoogleFonts.dmSans(
+      bodyLarge: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: textColor,
       ),
-      bodyMedium: GoogleFonts.dmSans(
+      bodyMedium: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
         color: textColor,
       ),
-      bodySmall: GoogleFonts.dmSans(
+      bodySmall: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: textColor,
       ),
-      labelLarge: GoogleFonts.dmSans(
+      labelLarge: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w600,
         color: textColor,
       ),
-      labelMedium: GoogleFonts.dmSans(
+      labelMedium: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w500,
         color: textColor,
       ),
-      labelSmall: GoogleFonts.dmSans(
+      labelSmall: TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w500,
         color: textColor,
@@ -140,7 +139,7 @@ class AppTheme {
         foregroundColor: AppColors.lightText,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.syne(
+        titleTextStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.lightText,
@@ -162,7 +161,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          textStyle: GoogleFonts.dmSans(
+          textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -184,7 +183,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: AppColors.gold, width: 1.5),
         ),
-        hintStyle: GoogleFonts.dmSans(color: AppColors.lightTextSecondary),
+        hintStyle: TextStyle(color: AppColors.lightTextSecondary),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.lightSurface,
@@ -220,7 +219,7 @@ class AppTheme {
         foregroundColor: AppColors.darkText,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.syne(
+        titleTextStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.darkText,
@@ -242,7 +241,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          textStyle: GoogleFonts.dmSans(
+          textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -264,7 +263,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: AppColors.gold, width: 1.5),
         ),
-        hintStyle: GoogleFonts.dmSans(color: AppColors.darkTextSecondary),
+        hintStyle: TextStyle(color: AppColors.darkTextSecondary),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.darkSurface,

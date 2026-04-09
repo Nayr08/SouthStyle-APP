@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../core/theme/app_colors.dart';
@@ -239,7 +238,7 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
       appBar: AppBar(
         title: Text(
           'Create Order',
-          style: GoogleFonts.syne(fontWeight: FontWeight.w600),
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
       body: SingleChildScrollView(
@@ -266,7 +265,7 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
                   // ── Product type chips ─────────
                   Text(
                     'Product Type',
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: onSurface,
@@ -283,7 +282,7 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
                         selected: selected,
                         onSelected: (_) => _onProductTypeChanged(t),
                         selectedColor: AppColors.gold,
-                        labelStyle: GoogleFonts.dmSans(
+                        labelStyle: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                           color: selected
@@ -338,7 +337,7 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
                       icon: const Icon(Icons.add, size: 18),
                       label: Text(
                         'Add Row',
-                        style: GoogleFonts.dmSans(fontSize: 13),
+                        style: TextStyle(fontSize: 13),
                       ),
                       style: TextButton.styleFrom(
                         foregroundColor: AppColors.gold,
@@ -398,7 +397,7 @@ class _SectionHeader extends StatelessWidget {
         Expanded(
           child: Text(
             title,
-            style: GoogleFonts.syne(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
@@ -505,7 +504,7 @@ class _ItemsTable extends StatelessWidget {
       flex: flex,
       child: Text(
         label,
-        style: GoogleFonts.dmSans(
+        style: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w600,
           color: AppColors.gold,
@@ -525,13 +524,13 @@ class _ItemsTable extends StatelessWidget {
       keyboardType: isNumber ? TextInputType.number : TextInputType.text,
       inputFormatters:
           isNumber ? [FilteringTextInputFormatter.digitsOnly] : null,
-      style: GoogleFonts.dmSans(
+      style: TextStyle(
         fontSize: 13,
         color: Theme.of(context).colorScheme.onSurface,
       ),
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: GoogleFonts.dmSans(
+        hintStyle: TextStyle(
           fontSize: 13,
           color: Theme.of(context)
               .colorScheme
@@ -584,7 +583,7 @@ class _Checklist extends StatelessWidget {
               onChanged: (v) => onChanged(i, v ?? false),
               title: Text(
                 labels[i],
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.onSurface,
                   decoration:

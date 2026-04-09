@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/job_order.dart';
@@ -46,7 +45,7 @@ class _OrdersScreenContent extends StatelessWidget {
             children: [
               Text(
                 'All Orders',
-                style: GoogleFonts.syne(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
@@ -62,7 +61,7 @@ class _OrdersScreenContent extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               'Filtering by: ${_statusLabel(provider.selectedFilter!)}',
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 12,
                 color: Theme.of(context)
                     .colorScheme
@@ -82,7 +81,7 @@ class _OrdersScreenContent extends StatelessWidget {
                   ? Center(
                       child: Text(
                         'No orders found',
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 14,
                           color: Theme.of(context)
                               .colorScheme
@@ -171,7 +170,7 @@ class _OrdersScreenContent extends StatelessWidget {
             const SizedBox(width: 4),
             Text(
               'Filter',
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 13,
                 color: Theme.of(context)
                     .colorScheme

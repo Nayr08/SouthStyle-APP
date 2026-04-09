@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../core/theme/app_colors.dart';
 
 class ProgressOrderCard extends StatelessWidget {
@@ -50,7 +49,7 @@ class ProgressOrderCard extends StatelessWidget {
                       orderNumber,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.syne(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.onSurface,
@@ -69,7 +68,7 @@ class ProgressOrderCard extends StatelessWidget {
                     ),
                     child: Text(
                       status,
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: _statusColor(),
@@ -81,7 +80,7 @@ class ProgressOrderCard extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 customerName,
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
@@ -99,7 +98,7 @@ class ProgressOrderCard extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 '${(progress * 100).toInt()}% complete',
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 12,
                   color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
                 ),

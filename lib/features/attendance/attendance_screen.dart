@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_colors.dart';
@@ -55,7 +54,7 @@ class _Header extends StatelessWidget {
         children: [
           Text(
             'Attendance',
-            style: GoogleFonts.syne(
+            style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w700,
               color: Theme.of(context).colorScheme.onSurface,
@@ -64,7 +63,7 @@ class _Header extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             subtitle,
-            style: GoogleFonts.dmSans(
+            style: TextStyle(
               fontSize: 14,
               color: Theme.of(context)
                   .colorScheme
@@ -117,7 +116,7 @@ class _FilterChips extends StatelessWidget {
         selected: selected,
         onSelected: (_) => ap.selectPreset(preset),
         selectedColor: AppColors.gold,
-        labelStyle: GoogleFonts.dmSans(
+        labelStyle: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: selected ? Colors.white : Theme.of(context).colorScheme.onSurface,
@@ -154,7 +153,7 @@ class _FilterChips extends StatelessWidget {
         onPressed: () => _pickRange(context, ap),
         backgroundColor:
             selected ? AppColors.gold : Theme.of(context).colorScheme.surface,
-        labelStyle: GoogleFonts.dmSans(
+        labelStyle: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: selected ? Colors.white : Theme.of(context).colorScheme.onSurface,
@@ -271,7 +270,7 @@ class _MiniStat extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               value,
-              style: GoogleFonts.syne(
+              style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
                 color: Theme.of(context).colorScheme.onSurface,
@@ -280,7 +279,7 @@ class _MiniStat extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 12,
                 color: color,
                 fontWeight: FontWeight.w600,
@@ -305,7 +304,7 @@ class _WorkerListHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Text(
         'Workers ($count)',
-        style: GoogleFonts.syne(
+        style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: Theme.of(context).colorScheme.onSurface,
@@ -342,7 +341,7 @@ class _WorkerList extends StatelessWidget {
           child: Center(
             child: Text(
               'No employees found.',
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 14,
                 color: Theme.of(context)
                     .colorScheme
@@ -418,7 +417,7 @@ class _WorkerCard extends StatelessWidget {
                   children: [
                     Text(
                       emp.fullName,
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.onSurface,
@@ -427,7 +426,7 @@ class _WorkerCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       emp.role.label,
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 12,
                         color: Theme.of(context)
                             .colorScheme
@@ -438,7 +437,7 @@ class _WorkerCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       '${summary.daysWorked} days worked',
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: AppColors.gold,
@@ -525,7 +524,7 @@ class _BreakdownSheet extends StatelessWidget {
                   children: [
                     Text(
                       emp.fullName,
-                      style: GoogleFonts.syne(
+                      style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
                         color: Theme.of(context).colorScheme.onSurface,
@@ -533,7 +532,7 @@ class _BreakdownSheet extends StatelessWidget {
                     ),
                     Text(
                       emp.role.label,
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 13,
                         color: Theme.of(context)
                             .colorScheme
@@ -579,7 +578,7 @@ class _BreakdownSheet extends StatelessWidget {
                     children: [
                       Text(
                         'Salary Estimate',
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 12,
                           color: Theme.of(context)
                               .colorScheme
@@ -590,7 +589,7 @@ class _BreakdownSheet extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         '${summary.daysWorked} days x ${currencyFmt.format(emp.dailyRate)} = ${currencyFmt.format(summary.salary)}',
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: Theme.of(context).colorScheme.onSurface,
@@ -612,7 +611,7 @@ class _BreakdownSheet extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Daily Breakdown',
-              style: GoogleFonts.syne(
+              style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.onSurface,
@@ -628,7 +627,7 @@ class _BreakdownSheet extends StatelessWidget {
               ? Center(
                   child: Text(
                     'No attendance records in this range.',
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 13,
                       color: Theme.of(context)
                           .colorScheme
@@ -664,7 +663,7 @@ class _BreakdownSheet extends StatelessWidget {
         children: [
           Text(
             count,
-            style: GoogleFonts.syne(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
               color: color,
@@ -672,7 +671,7 @@ class _BreakdownSheet extends StatelessWidget {
           ),
           Text(
             letter,
-            style: GoogleFonts.dmSans(fontSize: 10, color: color),
+            style: TextStyle(fontSize: 10, color: color),
           ),
         ],
       ),
@@ -725,7 +724,7 @@ class _DayRow extends StatelessWidget {
               children: [
                 Text(
                   dateFmt.format(record.date),
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -734,7 +733,7 @@ class _DayRow extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   'In: $timeIn  •  Out: $timeOut',
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 12,
                     color: Theme.of(context)
                         .colorScheme
@@ -753,7 +752,7 @@ class _DayRow extends StatelessWidget {
             ),
             child: Text(
               record.status.label,
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
                 color: _color(),

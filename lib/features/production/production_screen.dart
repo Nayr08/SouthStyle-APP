@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -43,8 +42,8 @@ class _ProductionScreenState extends State<ProductionScreen> {
       unselectedItemColor: theme.colorScheme.onSurface.withValues(alpha: 0.4),
       backgroundColor: theme.scaffoldBackgroundColor,
       type: BottomNavigationBarType.fixed,
-      selectedLabelStyle: GoogleFonts.dmSans(fontWeight: FontWeight.w600, fontSize: 12),
-      unselectedLabelStyle: GoogleFonts.dmSans(fontSize: 12),
+      selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+      unselectedLabelStyle: TextStyle(fontSize: 12),
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.work_outline), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
@@ -74,7 +73,7 @@ class _Header extends StatelessWidget {
               children: [
                 Text(
                   displayName,
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -89,7 +88,7 @@ class _Header extends StatelessWidget {
                   ),
                   child: Text(
                     stageLabel,
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.gold,
@@ -106,7 +105,7 @@ class _Header extends StatelessWidget {
               backgroundColor: AppColors.gold.withValues(alpha: 0.15),
               child: Text(
                 displayName.isNotEmpty ? displayName[0].toUpperCase() : 'W',
-                style: GoogleFonts.syne(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                   color: AppColors.gold,
@@ -178,7 +177,7 @@ class _HomeTab extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'Active Jobs',
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -205,7 +204,7 @@ class _HomeTab extends StatelessWidget {
                       const SizedBox(height: 12),
                       Text(
                         'No active jobs',
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 16,
                           color: Theme.of(context)
                               .colorScheme
@@ -331,7 +330,7 @@ class _JobCardState extends State<_JobCard> {
                   Expanded(
                     child: Text(
                       job.order.customerName,
-                      style: GoogleFonts.syne(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: theme.colorScheme.onSurface,
@@ -348,7 +347,7 @@ class _JobCardState extends State<_JobCard> {
                       ),
                       child: Text(
                         'Completed',
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           color: AppColors.success,
@@ -364,7 +363,7 @@ class _JobCardState extends State<_JobCard> {
                       ),
                       child: Text(
                         job.order.status.label,
-                        style: GoogleFonts.dmSans(
+                        style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           color: AppColors.gold,
@@ -390,7 +389,7 @@ class _JobCardState extends State<_JobCard> {
                         children: [
                           Text(
                             'PRODUCT',
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
                               color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
@@ -399,7 +398,7 @@ class _JobCardState extends State<_JobCard> {
                           const SizedBox(height: 2),
                           Text(
                             job.order.productType.label,
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: theme.colorScheme.onSurface,
@@ -422,7 +421,7 @@ class _JobCardState extends State<_JobCard> {
                         children: [
                           Text(
                             'TOTAL QTY',
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
                               color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
@@ -431,7 +430,7 @@ class _JobCardState extends State<_JobCard> {
                           const SizedBox(height: 2),
                           Text(
                             '${job.order.quantity} pcs',
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: theme.colorScheme.onSurface,
@@ -451,14 +450,14 @@ class _JobCardState extends State<_JobCard> {
                 children: [
                   Text(
                     'Progress',
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                     ),
                   ),
                   Text(
                     '${job.percent}%',
-                    style: GoogleFonts.dmSans(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
@@ -481,7 +480,7 @@ class _JobCardState extends State<_JobCard> {
               const SizedBox(height: 4),
               Text(
                 '${job.totalDone} / ${job.order.quantity} done',
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 12,
                   color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                 ),
@@ -495,7 +494,7 @@ class _JobCardState extends State<_JobCard> {
                 // Log progress section
                 Text(
                   'LOG PROGRESS',
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
                     color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
@@ -509,10 +508,10 @@ class _JobCardState extends State<_JobCard> {
                         controller: _controller,
                         keyboardType: TextInputType.number,
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        style: GoogleFonts.dmSans(fontSize: 14),
+                        style: TextStyle(fontSize: 14),
                         decoration: InputDecoration(
                           hintText: 'Qty completed...',
-                          hintStyle: GoogleFonts.dmSans(
+                          hintStyle: TextStyle(
                             fontSize: 13,
                             color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
                           ),
@@ -562,7 +561,7 @@ class _JobCardState extends State<_JobCard> {
                               )
                             : Text(
                                 'Update',
-                                style: GoogleFonts.dmSans(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -610,7 +609,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'History',
-                  style: GoogleFonts.syne(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: theme.colorScheme.onSurface,
@@ -674,7 +673,7 @@ class _HistoryTabState extends State<_HistoryTab> {
               const SizedBox(height: 12),
               Text(
                 'No history yet. Start logging your progress!',
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 16,
                   color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                 ),
@@ -716,7 +715,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                       child: Center(
                         child: Text(
                           '${log.quantityDone}',
-                          style: GoogleFonts.syne(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             color: AppColors.gold,
@@ -731,7 +730,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                         children: [
                           Text(
                             customerName,
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: theme.colorScheme.onSurface,
@@ -740,7 +739,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                           const SizedBox(height: 2),
                           Text(
                             '${_capitalizeFirst(productType)} \u2022 ${log.stage.label}',
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 12,
                               color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                             ),
@@ -750,7 +749,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                     ),
                     Text(
                       dateStr,
-                      style: GoogleFonts.dmSans(
+                      style: TextStyle(
                         fontSize: 11,
                         color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
                       ),
@@ -781,7 +780,7 @@ class _HistoryTabState extends State<_HistoryTab> {
               const SizedBox(height: 12),
               Text(
                 'No history yet. Start logging your progress!',
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 16,
                   color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                 ),
@@ -826,7 +825,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                         children: [
                           Text(
                             job.order.customerName,
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: theme.colorScheme.onSurface,
@@ -835,7 +834,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                           const SizedBox(height: 2),
                           Text(
                             job.order.productType.label,
-                            style: GoogleFonts.dmSans(
+                            style: TextStyle(
                               fontSize: 12,
                               color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                             ),
@@ -848,7 +847,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                       children: [
                         Text(
                           '${job.totalDone} pcs',
-                          style: GoogleFonts.dmSans(
+                          style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: AppColors.gold,
@@ -856,7 +855,7 @@ class _HistoryTabState extends State<_HistoryTab> {
                         ),
                         Text(
                           'of ${job.order.quantity} total',
-                          style: GoogleFonts.dmSans(
+                          style: TextStyle(
                             fontSize: 11,
                             color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
                           ),
@@ -906,7 +905,7 @@ class _FilterChip extends StatelessWidget {
         ),
         child: Text(
           label,
-          style: GoogleFonts.dmSans(
+          style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: selected ? Colors.black : AppColors.gold,

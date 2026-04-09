@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../core/theme/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -40,7 +39,7 @@ class CustomButton extends StatelessWidget {
               ],
               Text(
                 label,
-                style: GoogleFonts.dmSans(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),

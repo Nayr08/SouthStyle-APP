@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../core/theme/app_colors.dart';
 
 class StatCard extends StatelessWidget {
@@ -37,7 +36,7 @@ class StatCard extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               value,
-              style: GoogleFonts.syne(
+              style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
                 color: Theme.of(context).colorScheme.onSurface,
@@ -46,7 +45,7 @@ class StatCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               title,
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 13,
                 color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
               ),
